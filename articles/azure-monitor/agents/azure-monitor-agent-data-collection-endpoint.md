@@ -35,7 +35,7 @@ Azure Monitor Agent supports [Azure virtual network service tags](../../virtual-
 
 If the machine connects through a proxy server to communicate over the internet, review the following requirements to understand the network configuration required.
 
-The Azure Monitor Agent extensions for Windows and Linux can communicate either through a proxy server or a [Log Analytics gateway](./gateway.md) to Azure Monitor by using the HTTPS protocol. Use it for Azure virtual machines, Azure virtual machine scale sets, and Azure Arc for servers. Use the extensions settings for configuration as described in the following steps. Both anonymous and basic authentication by using a username and password are supported.
+The Azure Monitor Agent extensions for Windows and Linux can communicate either through a proxy server or a [Log Analytics gateway](./gateway.md) to Azure Monitor by using the HTTPS protocol. Use it for Azure virtual machines, Azure virtual machine scale sets, and Azure Arc for servers. Note that Azure Arc for servers cannot connect through the Log Analytics gateway, which is why you will need to use a 3rd party proxy if you do not wish to connect your server to the Internet. Use the extensions settings for configuration as described in the following steps. Both anonymous and basic authentication by using a username and password are supported.
 
 > [!IMPORTANT]
 > Proxy configuration isn't supported for [Azure Monitor Metrics (public preview)](../essentials/metrics-custom-overview.md) as a destination. If you're sending metrics to this destination, it will use the public internet without any proxy.
