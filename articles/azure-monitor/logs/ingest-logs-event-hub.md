@@ -414,7 +414,7 @@ To create a data collection rule association in the Azure portal:
 
 ## Check your destination table for ingested events
 
-Now that you've associated the data collection rule with your event hub, Azure Monitor Logs will ingest all existing events whose [retention period](/azure/event-hubs/event-hubs-features#event-retention) hasn't expired and all new events.
+Once you create your data collection rule association (DCRA) with your event hub, Azure Monitor Logs will ingest all existing events since the DCRA creation, provided their [retention period](/azure/event-hubs/event-hubs-features#event-retention) hasn't expired, as well as all new events. In case of an outage or ingestion failure, Azure Monitor Logs will also ingest all available events from the retention period since the last ingestion checkpoint.
 
 To check your destination table for ingested events:
 
